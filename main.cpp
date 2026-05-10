@@ -261,8 +261,8 @@ void SetupStyle()
     ImGuiStyle& s = ImGui::GetStyle();
     s.Alpha = 1.0f;
     s.DisabledAlpha = 0.35f;
-    s.WindowPadding = ImVec2(16, 16);
-    s.WindowRounding = 8.0f;
+    s.WindowPadding = ImVec2(10, 10);
+    s.WindowRounding = 6.0f;
     s.WindowBorderSize = 0.0f;
     s.ChildRounding = 6.0f;
     s.ChildBorderSize = 1.0f;
@@ -657,10 +657,10 @@ int main(int, char**)
     int screenW = GetSystemMetrics(SM_CXSCREEN);
     int screenH = GetSystemMetrics(SM_CYSCREEN);
 
-    g_winW = (int)(screenW * 0.46f);
-    g_winH = (int)(screenH * 0.80f);
-    if (g_winW < 760) g_winW = 760;
-    if (g_winH < 600) g_winH = 600;
+    g_winW = (int)(screenW * 0.30f);
+    g_winH = (int)(screenH * 0.55f);
+    if (g_winW < 620) g_winW = 620;
+    if (g_winH < 460) g_winH = 460;
     int winX = (screenW - g_winW) / 2;
     int winY = (screenH - g_winH) / 2;
 
@@ -700,12 +700,12 @@ int main(int, char**)
     {
         const ImWchar* ranges = io.Fonts->GetGlyphRangesChineseSimplifiedCommon();
         ImFont* font = io.Fonts->AddFontFromFileTTF(
-            "C:\\Windows\\Fonts\\msyh.ttc", 18.0f, nullptr, ranges);
+            "C:\\Windows\\Fonts\\msyh.ttc", 14.0f, nullptr, ranges);
         if (font) { io.FontDefault = font; g_cnFontOk = true; }
         else
         {
             font = io.Fonts->AddFontFromFileTTF(
-                "C:\\Windows\\Fonts\\simhei.ttf", 18.0f, nullptr, ranges);
+                "C:\\Windows\\Fonts\\simhei.ttf", 14.0f, nullptr, ranges);
             if (font) { io.FontDefault = font; g_cnFontOk = true; }
             else
                 io.FontDefault = io.Fonts->AddFontDefault();
